@@ -1,14 +1,23 @@
 package conta;
 
 import java.util.Scanner;
+import conta.model.Conta;
 import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
 		
-		int opcao;
+		//Teste da Classe conta
+		Conta c1 = new Conta(1, 123, 1, "Adriana", 10000.0f);
+		c1.visualizar();
+		c1.sacar(12000.0f);
+		c1.visualizar();
+		c1.depositar(5000.0f);
+		c1.visualizar();
+		
 		Scanner leia = new Scanner(System.in);
+		int opcao;
 		
 		while(true) {		
 			
@@ -18,19 +27,19 @@ public class Menu {
 		System.out.println("---------------------------------------------------------------------");
 		System.out.println("             1- Criar conta                                        ");
 		System.out.println("             2- Listar todas as contas existentes                  ");
-		System.out.println("             3- Buscar conta por nÃºmero                            ");
+		System.out.println("             3- Buscar conta por número                            ");
 		System.out.println("             4- Atualizar dados da conta                           ");
 		System.out.println("             5- Apagar conta                                       ");
 		System.out.println("             6- Sacar                                              ");
 		System.out.println("             7- Depositar                                          ");
-		System.out.println("             8- TransferÃªncias                                     ");
+		System.out.println("             8- Transferências                                     ");
 		System.out.println("             9- Sair                                               ");
 		System.out.println("---------------------------------------------------------------------");
-		System.out.println("Entre com a opÃ§Ã£o desejada: \n" + Cores.TEXT_RESET);
+		System.out.println("Entre com a opção desejada: \n" + Cores.TEXT_RESET);
 		opcao = leia.nextInt();	
 		
 		if (opcao == 9) {
-			System.out.println("\nBanco do Brazil com Z - O seu Futuro comeÃ§a aqui!");
+			System.out.println("\nBanco do Brazil com Z - O seu Futuro começa aqui!");
 			sobre();
              leia.close();
 			System.exit(0);
@@ -47,7 +56,7 @@ public class Menu {
             break;
             
 		case 3:
-			System.out.println(Cores.TEXT_WHITE + "Consultar dados da Conta - por nÃºmero\n\n");
+			System.out.println(Cores.TEXT_WHITE + "Consultar dados da Conta - por número\n\n");
 			break;
         
 		case 4:
@@ -62,15 +71,15 @@ public class Menu {
 			break;
 			
 		case 7:
-			System.out.println(Cores.TEXT_WHITE + "DepÃ³sito\n\n");
+			System.out.println(Cores.TEXT_WHITE + "Depósito\n\n");
             break;
             
 		case 8:
-			System.out.println(Cores.TEXT_WHITE + "TransferÃªncia entre Contas\n\n");
+			System.out.println(Cores.TEXT_WHITE + "Transferência entre Contas\n\n");
             break;
             		
 		default:
-			System.out.println(Cores.TEXT_RED_BOLD + "\nOpÃ§Ã£o InvÃ¡lida!\n" + Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_RED_BOLD + "\nOpção inválida!\n" + Cores.TEXT_RESET);
             break;
 
 		}
